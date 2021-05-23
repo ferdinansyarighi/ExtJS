@@ -1,0 +1,240 @@
+<table border="0">
+<tr>
+    <td colspan="65"><div align="center">Report Absen</div></td>
+</tr>
+<tr>
+    <td><div align="center">No</div></td>
+	<td><div align="center">Id Finger</div></td>
+    <td><div align="center">Nama Karyawan</div></td>
+    <td colspan="62"><div align="center">Tanggal</div></td>
+ </tr>
+<tr>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+ 
+			<td colspan="2"><div align="center">21</div></td>
+		 
+			<td colspan="2"><div align="center">22</div></td>
+		 
+			<td colspan="2"><div align="center">23</div></td>
+		 
+			<td colspan="2"><div align="center">24</div></td>
+		 
+			<td colspan="2"><div align="center">25</div></td>
+		 
+			<td colspan="2"><div align="center">26</div></td>
+		 
+			<td colspan="2"><div align="center">27</div></td>
+		 
+			<td colspan="2"><div align="center">28</div></td>
+		 
+			<td colspan="2"><div align="center">29</div></td>
+		 
+			<td colspan="2"><div align="center">30</div></td>
+		 
+			<td colspan="2"><div align="center">31</div></td>
+		 
+			<td colspan="2"><div align="center">01</div></td>
+		 
+			<td colspan="2"><div align="center">02</div></td>
+		 
+			<td colspan="2"><div align="center">03</div></td>
+		 
+			<td colspan="2"><div align="center">04</div></td>
+		 
+			<td colspan="2"><div align="center">05</div></td>
+		 
+			<td colspan="2"><div align="center">06</div></td>
+		 
+			<td colspan="2"><div align="center">07</div></td>
+		 
+			<td colspan="2"><div align="center">08</div></td>
+		 
+			<td colspan="2"><div align="center">09</div></td>
+		 
+			<td colspan="2"><div align="center">10</div></td>
+		 
+			<td colspan="2"><div align="center">11</div></td>
+		 
+			<td colspan="2"><div align="center">12</div></td>
+		 
+			<td colspan="2"><div align="center">13</div></td>
+		 
+			<td colspan="2"><div align="center">14</div></td>
+		 
+			<td colspan="2"><div align="center">15</div></td>
+		 
+			<td colspan="2"><div align="center">16</div></td>
+		 
+			<td colspan="2"><div align="center">17</div></td>
+		 
+			<td colspan="2"><div align="center">18</div></td>
+		 
+			<td colspan="2"><div align="center">19</div></td>
+		 
+			<td colspan="2"><div align="center">20</div></td>
+		  </tr><tr>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+    <td><div align="center"></div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td>
+			<td><div align="center">In</div></td>
+			<td><div align="center">Out</div></td> </tr>
+		<tr>
+			<td><div align="center">1</div></td>
+			<td><div align="left">10038     </div></td>
+			<td><div align="left">Yudi Suryani, Mrs. Indah IYD     </div></td>
+		 
+					<td><div align="center"></div></td>
+					<td><div align="center"></div></td>
+				 
+					<td><div align="center">07:15</div></td>
+					<td><div align="center">18:46</div></td>
+				 
+					<td><div align="center">07:38</div></td>
+					<td><div align="center">17:36</div></td>
+				 
+					<td><div align="center">07:22</div></td>
+					<td><div align="center">16:07</div></td>
+				 
+					<td><div align="center"></div></td>
+					<td><div align="center"></div></td>
+				 
+					<td><div align="center">09:51</div></td>
+					<td><div align="center">16:01</div></td>
+				 
+					<td><div align="center">07:42</div></td>
+					<td><div align="center">13:02</div></td>
+				 
+					<td><div align="center"></div></td>
+					<td><div align="center"></div></td>
+				 
+					<td><div align="center">07:50</div></td>
+					<td><div align="center">16:18</div></td>
+				 
+					<td><div align="center">07:19</div></td>
+					<td><div align="center">16:26</div></td>
+				 
+					<td><div align="center">07:35</div></td>
+					<td><div align="center">16:15</div></td>
+				 
+					<td><div align="center"></div></td>
+					<td><div align="center"></div></td>
+				 
+					<td><div align="center">07:53</div></td>
+					<td><div align="center">16:02</div></td>
+				 
+					<td><div align="center">07:59</div></td>
+					<td><div align="center">13:03</div></td>
+				 
+					<td><div align="center"></div></td>
+					<td><div align="center"></div></td>
+				 
+					<td><div align="center">07:51</div></td>
+					<td><div align="center">16:24</div></td>
+				 
+					<td><div align="center">07:28</div></td>
+					<td><div align="center">16:16</div></td>
+				 
+					<td><div align="center">07:15</div></td>
+					<td><div align="center">16:28</div></td>
+				 
+					<td><div align="center">07:53</div></td>
+					<td><div align="center">19:07</div></td>
+				 
+					<td><div align="center">07:25</div></td>
+					<td><div align="center">16:17</div></td>
+				 
+					<td><div align="center">07:09</div></td>
+					<td><div align="center">16:17</div></td>
+				 
+					<td><div align="center"></div></td>
+					<td><div align="center"></div></td>
+				 
+					<td><div align="center">07:26</div></td>
+					<td><div align="center">16:25</div></td>
+				 
+					<td><div align="center">07:13</div></td>
+					<td><div align="center">16:19</div></td>
+				 
+					<td><div align="center">07:10</div></td>
+					<td><div align="center">16:04</div></td>
+				 
+					<td><div align="center">07:22</div></td>
+					<td><div align="center">16:09</div></td>
+				 
+					<td><div align="center">07:07</div></td>
+					<td><div align="center">16:20</div></td>
+				 
+					<td><div align="center">07:13</div></td>
+					<td><div align="center">13:31</div></td>
+				 
+					<td><div align="center"></div></td>
+					<td><div align="center"></div></td>
+				 
+					<td><div align="center">07:04</div></td>
+					<td><div align="center">16:10</div></td>
+				 
+					<td><div align="center">07:20</div></td>
+					<td><div align="center">16:18</div></td>
+					</tr> </table>

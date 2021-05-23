@@ -1,0 +1,248 @@
+<?php
+include '../../main/koneksi.php';
+session_start();
+$user_id = "";
+$username = "";
+$emp_id = "";
+$emp_name = "";
+$io_id = "";
+$io_name = "";
+$loc_id = "";
+$loc_name = "";
+$org_id = "";
+$org_name = "";
+ if(isset($_SESSION[APP]['user_id']))
+  {
+	$user_id = $_SESSION[APP]['user_id'];
+	$username = $_SESSION[APP]['username'];
+	$emp_id = $_SESSION[APP]['emp_id'];
+	$emp_name = str_replace("'", "''", $_SESSION[APP]['emp_name']);
+	$io_id = $_SESSION[APP]['io_id'];
+	$io_name = $_SESSION[APP]['io_name'];
+	$loc_id = $_SESSION[APP]['loc_id'];
+	$loc_name = $_SESSION[APP]['loc_name'];
+	$org_id = $_SESSION[APP]['org_id'];
+	$org_name = $_SESSION[APP]['org_name'];
+  }
+  
+
+$status_trans = "";
+$data_count_payroll = "";
+$data_HRD_spv_mgr = "";
+$tingkat_trans = "";
+
+// $data_count_non_payroll = "";
+// $result_cp_plant = "";
+
+if ( isset( $_POST['id_mutasi_param'] ) )
+{
+	
+	$id_mutasi_param = $_POST['id_mutasi_param'];
+	
+	
+	
+	$query_cp_plant = oci_parse( $con,"
+		SELECT  COUNT( * )
+		FROM    APPS.PER_PEOPLE_F PPF
+		INNER JOIN  MJ_T_MUTASI MTM ON KARYAWAN_ID = PPF.PERSON_ID AND MTM.ID = $id_mutasi_param
+		INNER JOIN  APPS.PER_ASSIGNMENTS_F PAF ON PAF.PERSON_ID = PPF.PERSON_ID
+		LEFT JOIN   APPS.PER_JOBS PJ ON PJ.JOB_ID = PAF.JOB_ID AND PJ.JOB_ID = MTM.DEPT_LAMA_ID
+		LEFT JOIN   APPS.PER_POSITIONS PP ON PP.POSITION_ID = PAF.POSITION_ID AND PP.POSITION_ID = MTM.POSISI_LAMA_ID
+		LEFT JOIN   APPS.HR_LOCATIONS HL ON HL.LOCATION_ID = PAF.LOCATION_ID
+		LEFT JOIN   APPS.PER_VALID_GRADES_V PVG  ON PVG.POSITION_ID = PP.POSITION_ID AND PVG.GRADE_ID = MTM.GRADE_LAMA_ID
+		INNER JOIN  APPS.PER_PEOPLE_F PPF1 ON PPF1.PERSON_ID = MTM.MGR_LAMA AND PPF1.EFFECTIVE_END_DATE > SYSDATE
+		LEFT JOIN   APPS.PER_JOBS PJ1 ON PJ1.JOB_ID = MTM.DEPT_BARU_ID
+		INNER JOIN  APPS.PER_PEOPLE_F PPF2 ON PPF2.PERSON_ID = MTM.MGR_BARU AND PPF2.EFFECTIVE_END_DATE > SYSDATE
+		LEFT JOIN   APPS.PER_POSITIONS PP2 ON PP2.POSITION_ID = MTM.POSISI_BARU_ID
+		LEFT JOIN   APPS.HR_LOCATIONS HL2 ON HL2.LOCATION_ID = MTM.LOKASI_BARU_ID
+		INNER JOIN  APPS.PAY_PEOPLE_GROUPS PPG ON PPG.PEOPLE_GROUP_ID = PAF.PEOPLE_GROUP_ID 
+						AND (   UPPER( GROUP_NAME ) LIKE 'CP%'
+								OR UPPER( GROUP_NAME ) LIKE 'PLANT%' )
+		WHERE   PPF.EFFECTIVE_END_DATE > SYSDATE
+		AND     PAF.PRIMARY_FLAG = 'Y'
+	");
+	
+	oci_execute( $query_cp_plant );
+	$row_cp_plant = oci_fetch_row( $query_cp_plant );
+	$result_cp_plant = $row_cp_plant[0];
+	
+	
+	
+	/*
+	SELECT  DISTINCT PPF.PERSON_ID, PPF.FULL_NAME, PJ.JOB_ID, PJ.NAME JOB, 
+			PP.POSITION_ID, PP.NAME POSITION,
+			HL.LOCATION_ID, HL.LOCATION_CODE,
+			PVG.GRADE_ID, 
+			PVG.NAME GRADE
+	FROM APPS.PER_PEOPLE_F PPF
+	INNER JOIN APPS.PER_ASSIGNMENTS_F PAF ON PAF.PERSON_ID=PPF.PERSON_ID
+	LEFT JOIN APPS.PER_JOBS PJ ON PJ.JOB_ID=PAF.JOB_ID
+	LEFT JOIN APPS.PER_POSITIONS PP ON PP.POSITION_ID=PAF.POSITION_ID
+	LEFT JOIN APPS.HR_LOCATIONS HL ON HL.LOCATION_ID=PAF.LOCATION_ID
+	LEFT JOIN APPS.PER_VALID_GRADES_V PVG ON PVG.POSITION_ID=PP.POSITION_ID
+	AND PAF.GRADE_ID = PVG.GRADE_ID
+	WHERE PPF.EFFECTIVE_END_DATE > SYSDATE 
+	AND PAF.PRIMARY_FLAG = 'Y'
+	AND ( PVG.NAME LIKE '%II %' OR PVG.NAME LIKE '%III %' )
+	AND PJ.JOB_ID = 26066
+	*/
+	
+	
+	
+	$query_HRD_spv_mgr = oci_parse( $con,"
+		SELECT  COUNT( * )
+		FROM APPS.PER_PEOPLE_F PPF
+		INNER JOIN APPS.PER_ASSIGNMENTS_F PAF ON PAF.PERSON_ID=PPF.PERSON_ID
+		LEFT JOIN APPS.PER_JOBS PJ ON PJ.JOB_ID=PAF.JOB_ID
+		LEFT JOIN APPS.PER_POSITIONS PP ON PP.POSITION_ID=PAF.POSITION_ID
+		LEFT JOIN APPS.HR_LOCATIONS HL ON HL.LOCATION_ID=PAF.LOCATION_ID
+		LEFT JOIN APPS.PER_VALID_GRADES_V PVG ON PVG.POSITION_ID=PP.POSITION_ID
+		AND PAF.GRADE_ID = PVG.GRADE_ID
+		WHERE PPF.EFFECTIVE_END_DATE > SYSDATE
+		AND PAF.PRIMARY_FLAG = 'Y'
+		AND ( PVG.NAME LIKE '%II %' OR PVG.NAME LIKE '%III %' )
+		AND PJ.JOB_ID = 26066
+		AND PPF.PERSON_ID = $emp_id
+	");
+	
+	// echo $query_HRD_spv_mgr; exit;
+	
+	/*
+	echo "
+		SELECT  COUNT( * )
+		FROM APPS.PER_PEOPLE_F PPF
+		INNER JOIN APPS.PER_ASSIGNMENTS_F PAF ON PAF.PERSON_ID=PPF.PERSON_ID
+		LEFT JOIN APPS.PER_JOBS PJ ON PJ.JOB_ID=PAF.JOB_ID
+		LEFT JOIN APPS.PER_POSITIONS PP ON PP.POSITION_ID=PAF.POSITION_ID
+		LEFT JOIN APPS.HR_LOCATIONS HL ON HL.LOCATION_ID=PAF.LOCATION_ID
+		LEFT JOIN APPS.PER_VALID_GRADES_V PVG ON PVG.POSITION_ID=PP.POSITION_ID
+		AND PAF.GRADE_ID = PVG.GRADE_ID
+		WHERE PPF.EFFECTIVE_END_DATE > SYSDATE
+		AND PAF.PRIMARY_FLAG = 'Y'
+		AND ( PVG.NAME LIKE '%II %' OR PVG.NAME LIKE '%III %' )
+		AND PJ.JOB_ID = 26066
+		AND PPF.PERSON_ID = $emp_id
+	"; exit;
+	*/
+	
+	oci_execute( $query_HRD_spv_mgr );
+	$row_HRD_spv_mgr = oci_fetch_row( $query_HRD_spv_mgr );
+	$data_HRD_spv_mgr = $row_HRD_spv_mgr[0];
+	
+	
+	
+	$result_status = oci_parse( $con,"
+		SELECT  STATUS_DOK, TINGKAT
+		FROM    MJ_T_MUTASI
+		WHERE   ID = $id_mutasi_param
+	");
+	
+	oci_execute( $result_status );
+	$row_status = oci_fetch_row( $result_status );
+	
+	$status_trans = $row_status[0];
+	$tingkat_trans = $row_status[1];
+	
+	
+	
+	$query_count_payroll = "
+		SELECT  COUNT( * )
+		FROM    APPS.PER_PEOPLE_F PPF
+		INNER JOIN  MJ_T_MUTASI MTM ON KARYAWAN_ID = PPF.PERSON_ID
+		INNER JOIN  APPS.PER_ASSIGNMENTS_F PAF ON PAF.PERSON_ID = PPF.PERSON_ID
+		LEFT JOIN   APPS.PER_JOBS PJ ON PJ.JOB_ID = PAF.JOB_ID AND PJ.JOB_ID = MTM.DEPT_LAMA_ID
+		LEFT JOIN   APPS.PER_POSITIONS PP ON PP.POSITION_ID = PAF.POSITION_ID AND PP.POSITION_ID = MTM.POSISI_LAMA_ID
+		LEFT JOIN   APPS.HR_LOCATIONS HL ON HL.LOCATION_ID = PAF.LOCATION_ID
+		LEFT JOIN   APPS.PER_VALID_GRADES_V PVG  ON PVG.POSITION_ID = PP.POSITION_ID AND PVG.GRADE_ID = MTM.GRADE_LAMA_ID
+		INNER JOIN  APPS.PER_PEOPLE_F PPF1 ON PPF1.PERSON_ID = MTM.MGR_LAMA AND PPF1.EFFECTIVE_END_DATE > SYSDATE
+		LEFT JOIN   APPS.PER_JOBS PJ1 ON PJ1.JOB_ID = MTM.DEPT_BARU_ID
+		INNER JOIN  APPS.PER_PEOPLE_F PPF2 ON PPF2.PERSON_ID = MTM.MGR_BARU AND PPF2.EFFECTIVE_END_DATE > SYSDATE
+		LEFT JOIN   APPS.PER_POSITIONS PP2 ON PP2.POSITION_ID = MTM.POSISI_BARU_ID
+		LEFT JOIN   APPS.HR_LOCATIONS HL2 ON HL2.LOCATION_ID = MTM.LOKASI_BARU_ID
+		INNER JOIN  APPS.PAY_PEOPLE_GROUPS PPG ON PPG.PEOPLE_GROUP_ID = PAF.PEOPLE_GROUP_ID 
+						AND (   UPPER( GROUP_NAME ) LIKE 'CP%'
+								OR UPPER( GROUP_NAME ) LIKE 'PLANT%' )
+		WHERE   PPF.EFFECTIVE_END_DATE > SYSDATE
+		AND     PAF.PRIMARY_FLAG = 'Y'
+		AND MTM.ID = $id_mutasi_param
+	";
+
+	$result_count_payroll = oci_parse( $con, $query_count_payroll );
+	oci_execute( $result_count_payroll );
+
+	$rowdata_count_payroll = oci_fetch_row( $result_count_payroll );
+	$data_count_payroll = $rowdata_count_payroll[0];
+	
+	
+	/*
+	$query_count_non_payroll = "
+	SELECT  COUNT( * )
+	FROM MJ.MJ_T_MUTASI MTM
+	INNER JOIN APPS.PER_PEOPLE_F PPF ON PPF.PERSON_ID = MTM.KARYAWAN_ID AND PPF.EFFECTIVE_END_DATE > SYSDATE
+	INNER JOIN APPS.PER_PEOPLE_F PPF1 ON PPF1.PERSON_ID = MTM.CREATED_BY AND PPF1.EFFECTIVE_END_DATE > SYSDATE
+	INNER JOIN APPS.PER_PEOPLE_F PPF2 ON PPF2.PERSON_ID = MTM.DIREKSI AND PPF2.EFFECTIVE_END_DATE > SYSDATE
+	INNER JOIN APPS.PER_PEOPLE_F PPF3 ON PPF3.PERSON_ID = MTM.MGR_LAMA AND PPF3.EFFECTIVE_END_DATE > SYSDATE
+	INNER JOIN APPS.PER_PEOPLE_F PPF4 ON PPF4.PERSON_ID = MTM.MGR_BARU AND PPF4.EFFECTIVE_END_DATE > SYSDATE
+	LEFT JOIN APPS.PER_PEOPLE_F PPF5 ON PPF5.PERSON_ID = MTM.DIREKSI AND PPF5.EFFECTIVE_END_DATE > SYSDATE
+	INNER JOIN APPS.PER_GRADES PG ON MTM.GRADE_LAMA_ID = PG.GRADE_ID 
+	INNER JOIN APPS.PER_GRADES PG1 ON MTM.GRADE_BARU_ID = PG1.GRADE_ID 
+	LEFT JOIN APPS.PER_JOBS PJ ON PJ.JOB_ID = MTM.DEPT_LAMA_ID
+	LEFT JOIN APPS.PER_POSITIONS PP ON PP.POSITION_ID = MTM.POSISI_LAMA_ID
+	LEFT JOIN APPS.HR_LOCATIONS HL ON HL.LOCATION_ID = MTM.LOKASI_LAMA_ID 
+	LEFT JOIN APPS.PER_JOBS PJ1 ON PJ1.JOB_ID = MTM.DEPT_BARU_ID
+	LEFT JOIN APPS.PER_POSITIONS PP1 ON PP1.POSITION_ID = MTM.POSISI_BARU_ID
+	LEFT JOIN APPS.HR_LOCATIONS HL1 ON HL1.LOCATION_ID = MTM.LOKASI_BARU_ID 
+	LEFT JOIN APPS.HR_ORGANIZATION_UNITS HOU ON PP.ORGANIZATION_ID = HOU.ORGANIZATION_ID
+	LEFT JOIN APPS.HR_ORGANIZATION_UNITS HOU1 ON PP1.ORGANIZATION_ID = HOU1.ORGANIZATION_ID
+	LEFT JOIN MJ.MJ_T_APPROVAL MTA ON MTM.ID = MTA.TRANSAKSI_ID AND MTA.TRANSAKSI_KODE = 'MPD' 
+		AND MTA.STATUS = 'Approved' AND 1 = MTA.TINGKAT AND MTM.MGR_LAMA = MTA.EMP_ID
+	LEFT JOIN MJ.MJ_T_APPROVAL MTA2 ON MTM.ID = MTA2.TRANSAKSI_ID AND MTA2.TRANSAKSI_KODE = 'MPD' 
+		AND MTA2.STATUS = 'Approved' AND 2 = MTA2.TINGKAT AND MTM.MGR_BARU = MTA2.EMP_ID
+	LEFT JOIN MJ.MJ_T_APPROVAL MTA3 ON MTM.ID = MTA3.TRANSAKSI_ID AND MTA3.TRANSAKSI_KODE = 'MPD' 
+		AND MTA3.STATUS = 'Approved' AND 3 = MTA3.TINGKAT AND MTA3.TINGKAT = 3  
+	INNER JOIN APPS.PER_ASSIGNMENTS_F PAF ON PAF.PERSON_ID = PPF.PERSON_ID
+	WHERE 1=1 AND MTM.ID = $id_mutasi_param
+	AND PAF.PAYROLL_ID IS NULL";
+
+	$result_count_non_payroll = oci_parse( $con, $query_count_non_payroll );
+	oci_execute( $result_count_non_payroll );
+
+	$rowdata_count_non_payroll = oci_fetch_row( $result_count_non_payroll );
+	$data_count_non_payroll = $rowdata_count_non_payroll[0];
+	*/
+	
+	$result = array('success' => true,
+					'results' => $status_trans,
+					'results_payroll' => $data_count_payroll,
+					'result_HRD_spv_mgr' => $data_HRD_spv_mgr,
+					'result_tingkat_trans' => $tingkat_trans
+				);
+	echo json_encode($result);
+	
+	
+} else {
+
+	$result = array('success' => false,
+					'results' => $status_trans,
+					'results_payroll' => $data_count_payroll,
+					'result_HRD_spv_mgr' => $data_HRD_spv_mgr,
+					'result_tingkat_trans' => $tingkat_trans
+				);
+	
+	/*
+	$result = array('success' => false,
+					'results' => $status_trans,
+					'results_payroll' => $data_count_payroll,
+					'results_non_payroll' => $data_count_non_payroll,
+					'result_cp_plant' => $result_cp_plant,
+					'result_HRD_spv_mgr' => $data_HRD_spv_mgr,
+					'result_tingkat_trans' => $tingkat_trans
+				);
+	*/
+	
+	echo json_encode($result);
+	
+}
+
+
+?>

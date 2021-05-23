@@ -1,0 +1,62 @@
+<?PHP
+include '../../main/koneksi.php';
+$union='';
+$filter='';
+//$order=' order by satuan, komponen, nama_element';
+//$queryfilter=' AND MGE.ID_ELEMENT_GAJI_MINGGUAN IS NULL ';
+if (isset($_GET['dtid']))
+{	
+	$dtid = $_GET['dtid'];
+	$union = "SELECT * FROM
+    (
+		SELECT EGM.ID, NAMA_ELEMENT, KOMPONEN, TYPE_ELEMENT, DECODE(EGM.STATUS,'Y', 'Active', 'N', 'Inactive') STATUS, NVL(MMU2.NAMA_USER, MMU.NAMA_USER) OLEH, 
+		NVL(TO_CHAR(MGE.LAST_UPDATED_DATE, 'DD-MON-YYYY HH24:Mi:ss'), TO_CHAR(MGE.CREATED_DATE, 'DD-MON-YYYY HH24:Mi:ss')) TGL,
+		MGE.DEFAULT_VALUE, MGE.SATUAN
+		FROM MJ.MJ_M_ELEMENT_GAJI_MINGGUAN EGM
+		INNER JOIN MJ.MJ_M_GROUP_ELEMENT_DETAIL MGE ON EGM.ID = MGE.ID_ELEMENT
+		INNER JOIN MJ.MJ_M_USER MMU ON MGE.CREATED_BY = MMU.ID
+		LEFT JOIN MJ.MJ_M_USER MMU2 ON MGE.LAST_UPDATED_BY = MMU2.ID
+		WHERE MGE.ID_GROUP = $dtid and EGM.STATUS = 'Y'
+		ORDER BY KOMPONEN
+	)
+    UNION ALL";
+	//$filter = " AND nvl(MGE.ID_GROUP, 0) <> $dtid";
+	$filter = " AND nvl(EGM.ID, 0) NOT IN (SELECT DISTINCT NVL(EGM.ID,0) FROM MJ.MJ_M_ELEMENT_GAJI_MINGGUAN EGM
+    INNER JOIN MJ.MJ_M_USER MMU ON EGM.CREATED_BY = MMU.ID
+    LEFT JOIN MJ.MJ_M_USER MMU2 ON EGM.LAST_UPDATED_BY = MMU2.ID
+    INNER JOIN MJ.MJ_M_GROUP_ELEMENT_DETAIL MGE ON EGM.ID = MGE.ID_ELEMENT
+    WHERE 1=1 AND MGE.ID_GROUP = $dtid)";
+}
+
+	$result = oci_parse($con, "$union
+	SELECT * FROM    
+    (
+		SELECT DISTINCT EGM.ID, NAMA_ELEMENT, KOMPONEN, TYPE_ELEMENT, DECODE(EGM.STATUS,'Y', 'Active', 'N', 'Inactive') STATUS, NVL(MMU2.NAMA_USER, MMU.NAMA_USER) OLEH, 
+		NVL(TO_CHAR(EGM.LAST_UPDATED_DATE, 'DD-MON-YYYY HH24:Mi:ss'), TO_CHAR(EGM.CREATED_DATE, 'DD-MON-YYYY HH24:Mi:ss')) TGL,
+		0 DEFAULT_VALUE, '' SATUAN
+		FROM MJ.MJ_M_ELEMENT_GAJI_MINGGUAN EGM
+		INNER JOIN MJ.MJ_M_USER MMU ON EGM.CREATED_BY = MMU.ID
+		LEFT JOIN MJ.MJ_M_USER MMU2 ON EGM.LAST_UPDATED_BY = MMU2.ID
+		LEFT JOIN MJ.MJ_M_GROUP_ELEMENT_DETAIL MGE ON EGM.ID = MGE.ID_ELEMENT
+		WHERE EGM.STATUS = 'Y' $filter
+		ORDER BY KOMPONEN
+	)
+	");
+	oci_execute($result);
+	while($row = oci_fetch_row($result))
+	{
+		$record = array();
+		$record['HD_ID']=$row[0];
+		$record['DATA_NAMA']=$row[1];
+		$record['DATA_KOMPONEN']=$row[2];
+		$record['DATA_TYPE']=$row[3];
+		$record['DATA_STATUS']=$row[4];
+		$record['DATA_OLEH']=$row[5];
+		$record['DATA_TGL']=$row[6];
+		$record['DATA_DEFAULT']=$row[7];
+		$record['DATA_SATUAN']=$row[8];
+		$data[]=$record;
+	}
+	
+echo json_encode($data); 
+?>

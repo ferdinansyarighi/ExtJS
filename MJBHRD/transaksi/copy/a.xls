@@ -1,0 +1,305 @@
+<table border="0">
+<tr>
+    <td colspan="7"><div align="center">Report Karyawan</div></td>
+</tr>
+<tr>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Nama Karyawan</div></td>
+    <td><div align="center">Tanggal Absen</div></td>
+    <td><div align="center">Jam Masuk</div></td>
+    <td><div align="center">Jam Keluar</div></td>
+    <td><div align="center">Keterangan</div></td>
+    <td><div align="center">SIK / SPL</div></td>
+    <td><div align="center">Ijin Khusus</div></td>
+    <td><div align="center">Tgl Approved</div></td>
+ </tr>
+ 
+ 
+		<tr>
+			<td><div align="center">1</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2015-12-21</div></td>
+			<td><div align="left">08:02</div></td>
+			<td><div align="left">16:08</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left">Ijin</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-03-04</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">2</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2015-12-22</div></td>
+			<td><div align="left">07:50</div></td>
+			<td><div align="left">16:15</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left">Ijin</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-03-04</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">3</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2015-12-23</div></td>
+			<td><div align="left">07:51</div></td>
+			<td><div align="left">16:11</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left">Ijin</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-03-04</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">4</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2015-12-26</div></td>
+			<td><div align="left">07:34</div></td>
+			<td><div align="left">13:06</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left">Ijin</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-03-04</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">5</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2015-12-28</div></td>
+			<td><div align="left">07:53</div></td>
+			<td><div align="left">16:20</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left">Ijin</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-03-04</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">6</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2015-12-29</div></td>
+			<td><div align="left">07:52</div></td>
+			<td><div align="left">16:06</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left">Ijin</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-03-04</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">7</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2015-12-30</div></td>
+			<td><div align="left">07:49</div></td>
+			<td><div align="left">16:19</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left">Ijin</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-03-04</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">8</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2015-12-31</div></td>
+			<td><div align="left">07:52</div></td>
+			<td><div align="left">13:05</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">9</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-02</div></td>
+			<td><div align="left">08:02</div></td>
+			<td><div align="left">13:00</div></td>
+			<td><div align="left">ALPHA</div></td>
+			<td><div align="left">Terlambat</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-02-25</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">10</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-04</div></td>
+			<td><div align="left">07:49</div></td>
+			<td><div align="left">16:00</div></td>
+			<td><div align="left">ALPHA</div></td>
+			<td><div align="left">Terlambat</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-02-25</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">11</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-05</div></td>
+			<td><div align="left">07:54</div></td>
+			<td><div align="left">16:10</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">12</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-06</div></td>
+			<td><div align="left">07:48</div></td>
+			<td><div align="left">16:22</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">13</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-07</div></td>
+			<td><div align="left">08:00</div></td>
+			<td><div align="left">16:00</div></td>
+			<td><div align="left">ALPHA</div></td>
+			<td><div align="left">Cuti</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-02-27</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">14</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-08</div></td>
+			<td><div align="left">08:00</div></td>
+			<td><div align="left">16:00</div></td>
+			<td><div align="left">ALPHA</div></td>
+			<td><div align="left">Cuti</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-02-27</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">15</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-09</div></td>
+			<td><div align="left">08:00</div></td>
+			<td><div align="left">13:08</div></td>
+			<td><div align="left">ALPHA</div></td>
+			<td><div align="left">Terlambat</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-02-27</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">16</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-11</div></td>
+			<td><div align="left">07:51</div></td>
+			<td><div align="left">16:10</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">17</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-12</div></td>
+			<td><div align="left">07:50</div></td>
+			<td><div align="left">16:22</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">18</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-13</div></td>
+			<td><div align="left">07:57</div></td>
+			<td><div align="left">16:11</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">19</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-14</div></td>
+			<td><div align="left">08:00</div></td>
+			<td><div align="left">16:00</div></td>
+			<td><div align="left">ALPHA</div></td>
+			<td><div align="left">Sakit</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left">2016-02-25</div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">20</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-15</div></td>
+			<td><div align="left">07:48</div></td>
+			<td><div align="left">16:39</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">21</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-16</div></td>
+			<td><div align="left">07:58</div></td>
+			<td><div align="left">13:09</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">22</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-18</div></td>
+			<td><div align="left">07:48</div></td>
+			<td><div align="left">16:19</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">23</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-19</div></td>
+			<td><div align="left">07:44</div></td>
+			<td><div align="left">16:20</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		 
+		<tr>
+			<td><div align="center">24</div></td>
+			<td><div align="left">Wahyu Lestari, Mrs. Indah IWL</div></td>
+			<td><div align="left">2016-01-20</div></td>
+			<td><div align="left">07:47</div></td>
+			<td><div align="left">16:44</div></td>
+			<td><div align="left">MASUK</div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+			<td><div align="left"></div></td>
+		 </tr>
+		  </table>

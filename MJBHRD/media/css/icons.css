@@ -1,0 +1,401 @@
+
+.pasien{
+	background: url("images/main-icon/toolbar/pasien.png") no-repeat transparent !important;
+}
+
+.daftar_pasien{
+	background: url("images/main-icon/32/daftar_pasien.png") no-repeat transparent !important;
+}
+.fsb{
+	background: url("images/main-icon/32/fsb.png") no-repeat transparent !important;
+}
+.kartu{
+	background: url("images/main-icon/32/kartu.png") no-repeat transparent !important;
+}
+.master{
+	background: url("images/main-icon/32/master.png") no-repeat transparent !important;
+}
+.inv{
+	background: url("images/main-icon/32/inv.png") no-repeat transparent !important;
+}
+.lokasi{
+	background: url("images/main-icon/32/lokasi.png") no-repeat transparent !important;
+}
+.lab {
+	background: url("images/main-icon/32/lab.png") no-repeat transparent !important;
+	
+}
+.obat {
+	background: url("images/main-icon/32/obat.png") no-repeat transparent !important;
+}
+.tindakan {
+	background: url("images/main-icon/32/tindakan.png") no-repeat transparent !important;
+}
+	
+.user{
+	background: url("images/main-icon/32/user.png") no-repeat transparent !important;
+}
+.karyawan{
+	background: url("images/main-icon/32/karyawan.png") no-repeat transparent !important;
+}
+
+.warning{
+	background: url("images/main-icon/32/warning.png") no-repeat transparent !important;
+}
+.printer{
+	background: url("images/main-icon/32/printer.png") no-repeat transparent !important;
+}
+
+.ar{
+	background: url("images/main-icon/32/ar.png") no-repeat transparent !important;
+}
+.uang{
+	background: url("images/main-icon/toolbar/uang.png") no-repeat transparent !important;
+}
+.tambah1{
+	background: url("images/main-icon/toolbar/tambah1.png") no-repeat transparent !important;
+}
+.batal{
+	background: url("images/main-icon/toolbar/cancelw.png") no-repeat transparent !important;
+}
+.tambah {
+	background: url("images/main-icon/toolbar/add.png") no-repeat transparent !important;
+	
+}
+.ubah {
+	background: url("images/main-icon/toolbar/edit.png") no-repeat transparent !important;
+	
+}
+.hapus {
+	background: url("images/main-icon/toolbar/remove.png") no-repeat transparent !important;
+	
+}
+.hapus1 {
+	background: url("images/main-icon/toolbar/hapus1.png") no-repeat transparent !important;
+	
+}
+.excel {
+	background: url("images/main-icon/toolbar/excel.png") no-repeat transparent !important;
+	
+}
+.margin {
+	background: url("images/main-icon/toolbar/margin.png") no-repeat transparent !important;
+	
+}
+.simpan {
+	background: url("images/main-icon/toolbar/save.png") no-repeat transparent !important;
+	
+}
+.batal {
+	background: url("images/main-icon/toolbar/cancelw.png") no-repeat transparent !important;
+	
+}
+.reg {
+	background: url("images/main-icon/toolbar/reg.png") no-repeat transparent !important;
+	
+}
+.proses {
+	background: url("images/main-icon/toolbar/proses.png") no-repeat transparent !important;
+	
+}
+.refresh {
+	background: url("images/main-icon/toolbar/refresh.png") no-repeat transparent !important;
+	
+}
+.tambah_stok {
+	background: url("images/main-icon/toolbar/tambah_stok.png") no-repeat transparent !important;
+	
+}
+.cetak {
+	background: url("images/main-icon/toolbar/cetak.png") no-repeat transparent !important;
+	
+}
+.cari {
+	background: url("images/main-icon/toolbar/cari.png") no-repeat transparent !important;
+	
+}
+.lihat {
+	background: url("images/main-icon/toolbar/lihat.png") no-repeat transparent !important;
+	
+}
+
+
+
+
+.kamus {
+	background: url("images/main-icon/32/kamus.png") no-repeat transparent !important;
+	
+}
+.kamus1 {
+	background: url("images/main-icon/toolbar/kamus.png") no-repeat transparent !important;
+	
+}
+.kamus3{
+	background: url("images/main-icon/toolbar/kamus3.png") no-repeat transparent !important;
+	
+}
+.pegawai {
+	background: url("images/main-icon/32/pegawai.png") no-repeat transparent !important;
+	
+}
+.laporan {
+	background: url("images/main-icon/32/laporan.png") no-repeat transparent !important;
+	
+}
+.statistik{
+	background: url("images/main-icon/32/statistic.png") no-repeat transparent !important;
+	
+}
+.jabatan {
+	background: url("images/main-icon/32/jabatan.png") no-repeat transparent !important;
+	
+}
+
+.auto {
+	background: url("images/main-icon/toolbar/auto.png") no-repeat transparent !important;
+	
+}
+.pe{
+	background: url("images/main-icon/toolbar/pe.png") no-repeat transparent !important;
+	
+}
+.toga{
+	background: url("images/main-icon/toolbar/toga1.png") no-repeat transparent !important;
+	
+}
+.back{
+	background: url("images/main-icon/toolbar/back.png") no-repeat transparent !important;
+	
+}
+.assessment{
+	background: url("images/main-icon/toolbar/assessment.png") no-repeat transparent !important;
+	
+}
+.kinerja{
+	background: url("images/main-icon/toolbar/kinerja.png") no-repeat transparent !important;
+	
+}
+.jab{
+	background: url("images/main-icon/toolbar/jabatan.png") no-repeat transparent !important;
+	
+}
+.penugasan{
+	background: url("images/main-icon/toolbar/penugasan.png") no-repeat transparent !important;
+	
+}
+.struktural{
+	background: url("images/main-icon/toolbar/struktural.png") no-repeat transparent !important;
+	
+}
+.teknis{
+	background: url("images/main-icon/toolbar/teknis.png") no-repeat transparent !important;
+	
+}
+.add1{
+	background: url("images/main-icon/toolbar/add1.png") no-repeat transparent !important;
+	
+}
+.plus{
+	background: url("images/main-icon/toolbar/plus.png") no-repeat transparent !important;
+	
+}
+.minus{
+	background: url("images/main-icon/toolbar/minus.png") no-repeat transparent !important;
+	
+}
+.remove {
+	background: url("images/main-icon/toolbar/remove.png") no-repeat transparent !important;
+	
+}
+
+.filter {
+	background: url("images/main-icon/toolbar/filter.png") no-repeat transparent !important;
+	
+}
+
+.ok {
+	background: url("images/main-icon/toolbar/pilih.png") no-repeat transparent !important;
+	
+}
+.cancel {
+	background: url("images/main-icon/toolbar/cancel.png") no-repeat transparent !important;
+	
+}
+
+.promosi {
+	background: url("images/main-icon/toolbar/promosi.png") no-repeat transparent !important;
+	
+}
+
+.informasi {
+	background: url("images/main-icon/informasi.png") no-repeat transparent !important;
+	
+}
+.alert {
+	background: url("images/main-icon/alert.png") no-repeat transparent !important;
+	
+}
+.menu-master {
+	background: url("images/main-icon/toolbar/menu-master.png") no-repeat transparent !important;
+	
+}
+
+
+
+.p {
+	background: url("images/main-icon/toolbar/p.png") no-repeat transparent !important;
+	
+}
+
+
+
+
+.simpan2 {
+	background: url("images/main-icon/toolbar/simpan2.png") no-repeat transparent !important;
+	
+}
+
+
+
+.batal2 {
+	background: url("images/main-icon/toolbar/batal2.png") no-repeat transparent !important;
+	
+}
+
+
+.pengaturan {
+	background: url("images/main-icon/toolbar/pengaturan.png") no-repeat transparent !important;
+	
+}
+.ubah_sandi {
+	background: url("images/main-icon/toolbar/sandi.png") no-repeat transparent !important;
+	
+}
+.logout {
+	background: url("images/main-icon/toolbar/logout.png") no-repeat transparent !important;
+	
+}
+.detail {
+	background: url("images/main-icon/toolbar/detail1.png") no-repeat transparent !important;
+	
+}
+.kembali {
+	background: url("images/main-icon/toolbar/kembali.png") no-repeat transparent !important;
+	
+}
+.kembali2 {
+	background: url("images/main-icon/toolbar/kembali2.png") no-repeat transparent !important;
+	
+}
+.upload {
+	background: url("images/main-icon/toolbar/upload.png") no-repeat transparent !important;
+	
+}
+
+.pilih {
+	background: url("images/main-icon/toolbar/pilih1.png") no-repeat transparent !important;
+	
+}
+.masuk {
+	background: url("images/main-icon/toolbar/masuk.png") no-repeat transparent !important;
+	
+}
+.red {
+background:url("images/main-icon/toolbar/red.png") no-repeat left center;
+padding-left:30px;
+cursor: pointer;
+}
+.yellow {
+background:url("images/main-icon/toolbar/yellow.png") no-repeat left center;
+padding-left:30px;
+cursor: pointer;
+}
+.green {
+background:url("images/main-icon/toolbar/green.png") no-repeat left center;
+padding-left:30px;
+cursor: pointer;
+}
+.blue {
+background:url("images/main-icon/toolbar/blue.png") no-repeat left center;
+padding-left:30px;
+cursor: pointer;
+}
+.orange {
+background:url("images/main-icon/toolbar/orange.png") no-repeat left center;
+padding-left:30px;
+cursor: pointer;
+}
+#gridRencanaAksi  .redrow{
+    color:red !important;
+	font:bold !important;
+}
+#gridRencanaAksi  .brownrow{
+    color:brown !important;
+	font:bold !important;
+}
+.row-red  .x-col-cell {
+    background-color: #F78181;
+    color:black;
+	font:bold;
+}
+.row-yel  .x-col-cell {
+    background-color: #F3F781;
+    color:black;
+	font:bold;
+}
+.row-orange  .x-col-cell {
+    background-color: #FFA72B;
+    color:black;
+	font:bold;
+}
+.row-blue  .x-col-cell {
+    background-color: #81BEF7;
+    color:black;
+	font:bold;
+}
+.row-green  .x-col-cell {
+    background-color: #81F781;
+    color:black;
+	font:bold;
+}
+
+.nav-clicked{
+background:#B0D7FF;
+}
+.x-btn-activ{
+border-color:#81a4d0;
+background-image:none;
+background-color:#dbeeff;
+background-image:-webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#dbeeff),color-stop(48%,#d0e7ff),color-stop(52%,#bbd2f0),color-stop(100%,#bed6f5));
+background-image:-webkit-linear-gradient(top,#dbeeff,#d0e7ff 48%,#bbd2f0 52%,#bed6f5);
+background-image:-moz-linear-gradient(top,#dbeeff,#d0e7ff 48%,#bbd2f0 52%,#bed6f5);
+background-image:-o-linear-gradient(top,#dbeeff,#d0e7ff 48%,#bbd2f0 52%,#bed6f5);
+background-image:-ms-linear-gradient(top,#dbeeff,#d0e7ff 48%,#bbd2f0 52%,#bed6f5);
+background-image:linear-gradient(top,#dbeeff,#d0e7ff 48%,#bbd2f0 52%,#bed6f5)
+}
+.tbmenu1{
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+	background-color: green;
+    background-image: none;
+}
+#header1 {
+    background-color: #3788F6;
+}
+.no-icon-menu .x-menu-item-icon { display: none; }
+
+.uncollapsible .x-tree-elbow-minus {
+    background-image: url(images/tree/elbow.gif);
+}
+
+.uncollapsible .x-tree-elbow-end-minus {
+    background-image: url(images/tree/elbow-end.gif)
+}
+#treeMasalah .uncollapsible{
+    background-image: url(images/tree/elbow-end-minus.gif)
+}
+#treeMasalah .x-grid-tree-node-expanded .x-tree-icon-parent{
+    background-image: url(images/tree/elbow-end-minus.gif)
+}
+.x-grid-table .x-grid-cell-realisasi {background:#D9E5F3;}
+.x-grid-table .x-grid-cell-target {background:#D9E5F3;}

@@ -1,0 +1,17 @@
+<table border="0">
+<tr>
+    <td colspan="7"><div align="center">Report Karyawan</div></td>
+</tr>
+<tr>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Nama Karyawan</div></td>
+    <td><div align="center">Tanggal Absen</div></td>
+    <td><div align="center">Jam Masuk</div></td>
+    <td><div align="center">Jam Keluar</div></td>
+    <td><div align="center">Keterangan</div></td>
+    <td><div align="center">SIK / SPL</div></td>
+    <td><div align="center">Ijin Khusus</div></td>
+    <td><div align="center">Tgl Approved</div></td>
+ </tr>
+ 
+  </table>

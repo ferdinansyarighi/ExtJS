@@ -1,0 +1,21 @@
+<table border="0">
+<tr>
+    <td colspan="13"><div align="center">Report Gaji Minus</div></td>
+</tr>
+<tr>
+    <td><div align="center">No</div></td>
+    <td><div align="center">Nomor Karyawan</div></td>
+    <td><div align="center">Nama Karyawan</div></td>
+    <td><div align="center">Nomor Rekening</div></td>
+    <td><div align="center">Atas Nama</div></td>
+    <td><div align="center">Total Gaji Seharusnya</div></td>
+    <td><div align="center">Total Gaji Minus</div></td>
+    <td><div align="center">Hari Alpha</div></td>
+    <td><div align="center">Total Alpha</div></td>
+    <td><div align="center">Hari Terlambat</div></td>
+    <td><div align="center">Total Terlambat</div></td>
+    <td><div align="center">Hari Ijin</div></td>
+    <td><div align="center">Total Ijin</div></td>
+ </tr>
+ 
+  </table>

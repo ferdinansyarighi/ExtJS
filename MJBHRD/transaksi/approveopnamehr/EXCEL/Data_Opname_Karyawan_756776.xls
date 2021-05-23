@@ -1,0 +1,66 @@
+<table border="0">
+		<tr>
+		    <td colspan="15"><div align="left">List Opname Data Karyawan</div></td>
+		</tr>
+
+		 <tr>
+			<td colspan="15"><div align="left"></div></td>
+		 </tr>
+		  <tr>
+			<td colspan="15"><div align="left"><table border="1">
+				<tr>
+					<td><div align="center">No</div></td>
+					<td><div align="center">Nama Karyawan</div></td>
+					<td><div align="center">Organization Units</div></td>
+					<td><div align="center">Organization Units Pengganti</div></td>
+					<td><div align="center">Departemen</div></td>
+					<td><div align="center">Departemen Pengganti</div></td>
+					<td><div align="center">Plant</div></td>
+					<td><div align="center">Plant Pengganti</div></td>
+					<td><div align="center">Jabatan</div></td>
+					<td><div align="center">Jabatan Pengganti</div></td>
+					<td><div align="center">Grade</div></td>
+					<td><div align="center">Grade Pengganti</div></td>			
+					<td><div align="center">Atasan Langung</div></td>
+					<td><div align="center">Atasan Langsung Pengganti</div></td>			
+					<td><div align="center">Atasan Tidak Langung</div></td>
+					<td><div align="center">Atasan Tidak Langsung Pengganti</div></td>			
+					<td><div align="center">Keterangan</div></td>	
+					<td><div align="center">Keterangan Manager</div></td>	
+					<td><div align="center">Keterangan Manager HRD</div></td>	
+					<td><div align="center">Status</div></td>	
+					<td><div align="center">Approval Terakhir</div></td>	
+				</tr>
+			</table></div></td>
+		 </tr>
+
+
+		 
+				 <tr>
+					<td colspan="15"><div align="left"><table border="1">
+						<tr>
+							<td><div align="center">1</div></td>
+							<td><div align="center">Dewantoro, Mr. Allifiando LFN</div></td>
+							<td><div align="center">Merak Jaya Group</div></td>
+							<td><div align="left"></div></td>
+							<td><div align="left">Information Technology</div></td>
+							<td><div align="left"></div></td>
+							<td><div align="left">Barata 46</div></td>
+							<td><div align="left"></div></td>
+							<td><div align="left">ENG.STF.SFE</div></td>
+							<td><div align="left"></div></td>		
+							<td><div align="left">IV A.Staff Bulanan</div></td>		
+							<td><div align="left"></div></td>		
+							<td><div align="left"></div></td>		
+							<td><div align="left">Ariefuzzaki Rahmawan, Mr. Nanda ZKI</div></td>		
+							<td><div align="left"></div></td>		
+							<td><div align="left">Kurniawan, Mr. Herry HEK</div></td>		
+							<td><div align="left"></div></td>		
+							<td><div align="left"></div></td>		
+							<td><div align="left">LFN</div></td>		
+							<td><div align="left">Approved</div></td>		
+							<td><div align="left">Anggo, Mr. Freddy FRG</div></td>		
+						</tr>
+					</table></div></td>
+				 </tr>
+				 </table>

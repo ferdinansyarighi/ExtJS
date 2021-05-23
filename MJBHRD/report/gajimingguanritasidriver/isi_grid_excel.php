@@ -1,0 +1,155 @@
+<?php
+include '../../main/koneksi.php';
+session_start();
+$user_id = "";
+$username = "";
+$emp_id = "";
+$emp_name = "";
+$io_id = "";
+$io_name = "";
+$loc_id = "";
+$loc_name = "";
+$org_id = "";
+$org_name = "";
+ if(isset($_SESSION[APP]['user_id']))
+  {
+	$user_id = $_SESSION[APP]['user_id'];
+	$username = $_SESSION[APP]['username'];
+	$emp_id = $_SESSION[APP]['emp_id'];
+	$emp_name = $_SESSION[APP]['emp_name'];
+	$io_id = $_SESSION[APP]['io_id'];
+	$io_name = $_SESSION[APP]['io_name'];
+	$loc_id = $_SESSION[APP]['loc_id'];
+	$loc_name = $_SESSION[APP]['loc_name'];
+	$org_id = $_SESSION[APP]['org_id'];
+	$org_name = $_SESSION[APP]['org_name'];
+  }
+  
+$status = "";
+$tglfrom = "";
+$tglto = "";
+$plant = "";
+$noDok = "";
+$tingkat = 0;
+$queryfilter = "";
+if (isset($_GET['tgl_awal']))
+{	
+	$tgl_awal = $_GET['tgl_awal'];
+	$tgl_akhir = $_GET['tgl_akhir'];
+	$plant = $_GET['plant'];
+	$nama = $_GET['nama'];
+	$queryfilter .= " AND TO_CHAR(TRD.EFFECTIVE_START_DATE, 'YYYY-MM-DD') >= '$tgl_awal'  AND TO_CHAR(TRD.EFFECTIVE_END_DATE, 'YYYY-MM-DD') <= '$tgl_akhir' ";
+	if($nama!=''){
+		$queryfilter .= " AND TRD.NAMA_DRIVER = '$nama'";
+	}
+	if($plant!=''){
+		$queryfilter .= " AND PAF.LOCATION_ID = (SELECT LOCATION_ID FROM APPS.HR_ORGANIZATION_UNITS WHERE ORGANIZATION_ID = '$plant')";
+	}
+} 
+
+/* Backup sblm data double
+$query = "SELECT PPF.PERSON_ID
+, PPF.FULL_NAME
+, COUNT(TRLD.RITASI_KE) RITASI_KE
+, SUM(TRLD.LEMBUR) LEMBUR
+, SUM(TRLD.UANG_MAKAN) UANG_MAKAN
+, NVL(K.KEKURANGAN, 0) KEKURANGAN
+, NVL(N.NOMINAL, 0) NOMINAL
+, NVL(N.NOMINAL, 0) + SUM(TRLD.LEMBUR) + SUM(TRLD.UANG_MAKAN) + NVL(K.KEKURANGAN, 0) TOTAL
+FROM MJ.MJ_T_RITASI_LEMBUR_DRIVER TRLD
+INNER JOIN MJ.MJ_T_RITASI_DRIVER TRD ON TRD.ID = TRLD.TRANSAKSI_ID
+INNER JOIN APPS.PER_PEOPLE_F PPF ON PPF.PERSON_ID = TRLD.PERSON_ID AND PPF.EFFECTIVE_END_DATE > SYSDATE AND PPF.CURRENT_EMPLOYEE_FLAG = 'Y'
+INNER JOIN APPS.PER_ASSIGNMENTS_F PAF ON PAF.PERSON_ID = PPF.PERSON_ID AND PAF.EFFECTIVE_END_DATE > SYSDATE
+LEFT JOIN 
+(
+    SELECT TRLD1.TRANSAKSI_ID, CASE WHEN TRLD1.TIPE = 'BP' THEN SUM((TRLD1.VARIABEL * TRLD1.NOMINAL))
+    ELSE SUM(TRLD1.NOMINAL) END as NOMINAL 
+    FROM MJ.MJ_T_RITASI_LEMBUR_DRIVER TRLD1 
+    INNER JOIN MJ.MJ_T_RITASI_DRIVER TRD1 ON TRLD1.TRANSAKSI_ID = TRD1.ID
+    WHERE TRLD1.STATUS='Y' AND TRLD1.TGL >= TRD1.EFFECTIVE_START_DATE
+    AND TRLD1.TGL <= TRD1.EFFECTIVE_END_DATE
+    GROUP BY TRLD1.TRANSAKSI_ID, TRLD1.TIPE
+) N ON N.TRANSAKSI_ID=TRD.ID
+LEFT JOIN 
+(
+    SELECT TRLD1.TRANSAKSI_ID, CASE WHEN TRLD1.TIPE = 'BP' THEN SUM((TRLD1.VARIABEL * TRLD1.NOMINAL) + TRLD1.LEMBUR + TRLD1.UANG_MAKAN)
+    ELSE SUM(TRLD1.NOMINAL + TRLD1.LEMBUR + TRLD1.UANG_MAKAN) END as KEKURANGAN 
+    FROM MJ.MJ_T_RITASI_LEMBUR_DRIVER TRLD1 
+    INNER JOIN MJ.MJ_T_RITASI_DRIVER TRD1 ON TRLD1.TRANSAKSI_ID = TRD1.ID
+    WHERE TRLD1.STATUS='Y' AND TRLD1.TGL < TRD1.EFFECTIVE_START_DATE
+    GROUP BY TRLD1.TRANSAKSI_ID, TRLD1.TIPE
+) K ON K.TRANSAKSI_ID=TRD.ID
+WHERE TRLD.STATUS = 'Y'
+$queryfilter
+GROUP BY PPF.FULL_NAME, PPF.PERSON_ID, TRLD.TIPE, K.KEKURANGAN, N.NOMINAL
+ORDER BY PPF.FULL_NAME
+"; */
+
+$query = "SELECT TAB.PERSON_ID, TAB.FULL_NAME, SUM(RITASI_KE) RITASI_KE, SUM(LEMBUR) LEMBUR, SUM(UANG_MAKAN) UANG_MAKAN, SUM(KEKURANGAN) KEKURANGAN
+    , SUM(NOMINAL) NOMINAL, SUM(TOTAL)
+FROM 
+    (
+        SELECT 
+            PPF.PERSON_ID
+            , PPF.FULL_NAME
+            , TRLD.TIPE
+            , COUNT(TRLD.RITASI_KE) RITASI_KE
+            , SUM(TRLD.LEMBUR) LEMBUR
+            , SUM(TRLD.UANG_MAKAN) UANG_MAKAN
+            , NVL(K.KEKURANGAN, 0) KEKURANGAN
+            , NVL(N.NOMINAL, 0) NOMINAL
+            , NVL(N.NOMINAL, 0) + SUM(TRLD.LEMBUR) + SUM(TRLD.UANG_MAKAN) + NVL(K.KEKURANGAN, 0) TOTAL
+            FROM MJ.MJ_T_RITASI_LEMBUR_DRIVER TRLD
+            INNER JOIN MJ.MJ_T_RITASI_DRIVER TRD ON TRD.ID = TRLD.TRANSAKSI_ID
+            INNER JOIN APPS.PER_PEOPLE_F PPF ON PPF.PERSON_ID = TRLD.PERSON_ID AND PPF.EFFECTIVE_END_DATE > SYSDATE AND PPF.CURRENT_EMPLOYEE_FLAG = 'Y'
+            INNER JOIN APPS.PER_ASSIGNMENTS_F PAF ON PPF.PERSON_ID = PAF.PERSON_ID AND PAF.EFFECTIVE_END_DATE > SYSDATE and paf.primary_flag = 'Y'
+            LEFT JOIN 
+            (
+                SELECT TRLD1.TRANSAKSI_ID, TRLD1.TIPE, CASE WHEN TRLD1.TIPE = 'BP' THEN SUM((TRLD1.VARIABEL * TRLD1.NOMINAL))
+                ELSE SUM(TRLD1.NOMINAL) END as NOMINAL 
+                FROM MJ.MJ_T_RITASI_LEMBUR_DRIVER TRLD1 
+                INNER JOIN MJ.MJ_T_RITASI_DRIVER TRD1 ON TRLD1.TRANSAKSI_ID = TRD1.ID
+                WHERE TRLD1.STATUS='Y' AND TRLD1.TGL >= TRD1.EFFECTIVE_START_DATE
+                AND TRLD1.TGL <= TRD1.EFFECTIVE_END_DATE
+                GROUP BY TRLD1.TRANSAKSI_ID, TRLD1.TIPE
+            ) N ON N.TRANSAKSI_ID=TRD.ID AND TRLD.TIPE = N.TIPE
+            LEFT JOIN 
+            (
+                SELECT TRLD1.TRANSAKSI_ID, TRLD1.TIPE, CASE WHEN TRLD1.TIPE = 'BP' THEN SUM((TRLD1.VARIABEL * TRLD1.NOMINAL) + TRLD1.LEMBUR + TRLD1.UANG_MAKAN)
+                ELSE SUM(TRLD1.NOMINAL + TRLD1.LEMBUR + TRLD1.UANG_MAKAN) END as KEKURANGAN 
+                FROM MJ.MJ_T_RITASI_LEMBUR_DRIVER TRLD1 
+                INNER JOIN MJ.MJ_T_RITASI_DRIVER TRD1 ON TRLD1.TRANSAKSI_ID = TRD1.ID
+                WHERE TRLD1.STATUS='Y' AND TRLD1.TGL < TRD1.EFFECTIVE_START_DATE
+                GROUP BY TRLD1.TRANSAKSI_ID, TRLD1.TIPE
+            ) K ON K.TRANSAKSI_ID=TRD.ID AND TRLD.TIPE = K.TIPE
+            WHERE TRLD.STATUS = 'Y'
+             $queryfilter
+            GROUP BY PPF.FULL_NAME, PPF.PERSON_ID, TRLD.TIPE, K.KEKURANGAN, N.NOMINAL
+    ) TAB
+GROUP BY TAB.PERSON_ID, TAB.FULL_NAME
+ORDER BY TAB.FULL_NAME
+";
+//echo $query;
+$result = oci_parse($con,$query);
+oci_execute($result);
+$count = 0;
+while($row = oci_fetch_row($result))
+{
+	$record = array();
+	$record['DATA_NAMA']=$row[1];
+	$record['DATA_RITASI_KE']=$row[2];
+	$record['DATA_LEMBUR']=$row[3];
+	$record['DATA_UM']=$row[4];
+	$record['DATA_KEKURANGAN']=$row[5];
+	$record['DATA_NOMINAL']=$row[6];
+	$record['DATA_TOTAL']=$row[7];
+	$data[]=$record;
+	$count++;
+}
+
+if ($count==0)
+{
+	$data="";
+}
+ echo json_encode($data);
+?>

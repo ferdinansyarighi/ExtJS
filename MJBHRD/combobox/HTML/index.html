@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>PT.MERAK JAYA BETON</title>
+<link rel="stylesheet" type="text/css" href="styles/style.css" media="all" />
+
+<script type="text/javascript" src="http://www.google.com/jsapi" ></script>
+		<script type="text/javascript">
+		  google.load("jquery", "1.6.4");
+		</script>
+<script type="text/javascript" src="js/jquery.countdown.js"></script>
+<script type="text/javascript" src="js/custom.js"></script><script type="text/javascript">
+	$(document).ready(function(){	
+		SubscribeForm();
+	});
+</script>
+
+</head>
+
+<body>
+<!-- Options Panel -->
+<div id="options" class="rounded">
+	<h2>OPTIONS PANEL</h2>
+    <div id="texture_options">
+   	  <h3>Textures</h3>
+   	  <img src="images/pattern1.png" width="32" height="24" alt=" " />
+      <img src="images/pattern2.png" width="32" height="24" alt=" " />
+      <img src="images/pattern3.png" width="32" height="24" alt=" " />
+      <img src="images/pattern4.png" width="32" height="24" alt=" " />
+      <img src="images/pattern5.png" width="32" height="24" alt=" " />
+      <img src="images/pattern6.png" width="32" height="24" alt=" " />
+    </div>
+    <div id="color_options">
+    	<h3>Color Options</h3>
+        <div id="color1" class="color"></div>
+        <div id="color2" class="color"></div>
+        <div id="color3" class="color"></div>
+        <div id="color4" class="color" ></div>
+        <div id="color5" class="color"></div>
+        <div id="color6" class="color"></div>
+    </div>
+</div>
+<div id="options_button" class="rounded"></div>
+<!-- end Options Panel -->
+
+<!-- Main page -->
+<div id="page">
+
+	<!-- Company Name or logo -->
+	<h1 class="engraved color_text">KONEKSI &nbsp&nbsp GAGAL &nbsp&nbsp !</h1>
+    <p class="engrave_text">Saat ini tim IT Operational sedang berusaha memulihkan report ini, mohon bersabar.</p>
+     <p class="engrave_text"><br><b>Estimasi :</b></p>
+    
+    <!-- Countdown -->
+    <div id="defaultCountdown" class="engraved color_text"></div>
+    <!-- end Countdown -->
+    
+    <div id="content" class="grey rounded shadow">
+        
+        <!-- Short description of the company -->
+         <div id="about">
+        	<h2 class="engraved color_text">Detail</h2>
+            <div id="image_placeholder" class="grey rounded shadow"><img src="images/logo_merak.png" width="160" height="120" alt=" " /></div>
+            <p class="engrave_text">Jika anda melihat pesan error ini artinya koneksi dari server oracle ke biofinger sedang bermasalah. Kegagalan koneksi ini juga bisa melingkupi gagal koneksi dari aplikasi ke biofinger. Untuk data absensi pada oracle juga bisa terhambat, namun setelah koneksi kembali normal maka absen yang tidak muncul di oracle akan di generate ulang.</p>
+            <p class="engrave_text">Kami mohon kesabaran untuk menunggu proses pemulihan yang saat ini juga sedang kami lakukan. <br> <br> Terima Kasih.</p>
+        </div>
+        <!-- end Short description -->
+        
+        <div id="right-panel">
+        
+			<!-- Subscribe Form -->        
+        	<h2 class="engraved color_text">KIRIM &nbsp&nbsp MASUKAN &nbsp ANDA</h2>
+             <form method="post" action="emailform.php" id="signupform">
+             <input class="email rounded shadow" name="email" id="email" type="text" value="Enter Your Suggestion" onfocus="if(this.value=='Enter Your Suggestion'){this.value=''};" />
+				<input class="submit color_button rounded" type="submit" value="Send" name="submit" id="submit" />
+                <p><input type="hidden" name="submitted" id="submitted" value="true" /></p>
+            </form>
+            <!-- end Subscribe Form -->
+            
+            <!-- Social Icons -->        
+          	<h2 class="engraved color_text">BACK &nbsp&nbsp TO &nbsp&nbsp MJBHRD</h2>
+        	<a href="../../../main/indexUtama.php"><img class="img_align" src="images/home.png" width="60" height="60"/></a>
+        </div>
+        <!-- end Social Icons -->
+        
+    </div>
+    <!-- end Main Page -->
+    <div id="footer" class="engrave_text">© Copyright 2018 PT. Merak Jaya Beton. All Rights Reserved.</div><!--end #footer-->
+</div><!-- end #page -->
+</body>
+</html>
